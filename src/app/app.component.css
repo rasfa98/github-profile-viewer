@@ -15,8 +15,9 @@ body, html {
     margin-top: 50px;
 }
 
-#results img {
+img {
     margin: 0 auto;
+    display: block;
 }
 
 #results .card button {
@@ -45,7 +46,16 @@ body, html {
     margin-left: -200px;
 }
 
-#details a {
+#details #close {
     margin: 40px;
     font-size: 50px;
+}
+
+#details .subtitle {
+    margin-bottom: 0px;
+}
+
+#details p {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

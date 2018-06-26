@@ -1,5 +1,5 @@
 <div id="details" [hidden]="!details">
-  <a class="icon is-pulled-right has-text-primary" href="#" (click)="closeDetails()">
+  <a id="close" class="icon is-pulled-right has-text-primary" href="#" (click)="closeDetails()">
     <i class="fas fa-times"></i>
   </a>
 
@@ -11,12 +11,54 @@
 
       <div class="card-content">
         <h1 class="title">{{user.name}}</h1>
+
+        <span *ngIf="!user.name">
+          <h1 class="title">No name given...</h1>
+        </span>
+
         <h2 class="subtitle">{{user.login}}</h2>
+
         <p>{{user.bio}}</p>
+
+        <span *ngIf="!user.bio">
+          <p>The user has not written a bio.</p>
+        </span>
+
+        <ul>
+          <li>
+            <span class="icon has-text-primary">
+              <i class="fas fa-map-marker-alt"></i>
+            </span> {{user.location}}
+
+            <span *ngIf="!user.location">No location</span>
+          </li>
+
+          <li>
+            <span class="icon has-text-primary">
+              <i class="fas fa-book"></i>
+            </span> {{user.public_repos}}</li>
+
+          <li>
+            <span class="icon has-text-primary">
+              <i class="fas fa-user"></i>
+            </span> {{user.followers}}</li>
+
+          <li>
+            <span class="icon has-text-primary">
+              <i class="fas fa-building"></i>
+            </span> {{user.company}}
+
+            <span *ngIf="!user.company">No company</span>
+          </li>
+
+          <li>
+            <span class="icon has-text-primary">
+              <i class="far fa-calendar-alt"></i>
+            </span> {{user.created_at | slice:0:10}}</li>
+        </ul>
       </div>
     </div>
   </div>
-
 </div>
 
 <div class="container has-text-centered">
