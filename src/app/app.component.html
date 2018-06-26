@@ -23,9 +23,9 @@
   <div id="search">
     <h1 class="title has-text-primary ">Search for GitHub user</h1>
 
-    <input type="text" placeholder="Enter username..." class="input is-primary is-rounded" #query>
+    <input type="text" placeholder="Enter username..." class="input is-primary is-rounded" #query (input)="checkInput(query.value)">
 
-    <button class="button is-primary is-outlined is-rounded" (click)="search(query.value)">Search</button>
+    <button #searchBtn class="button is-primary is-outlined is-rounded" (click)="search(query.value)" disabled>Search</button>
   </div>
 
   <div id="results" class="columns is-multiline">
