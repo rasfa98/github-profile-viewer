@@ -12,6 +12,13 @@ img {
   padding-top: 50px;
 }
 
+#errorMessage {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 30;
+}
+
 #loading {
   border: 16px solid #f3f3f3;
   border-top: 16px solid #00d1b2;

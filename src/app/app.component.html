@@ -1,3 +1,7 @@
+<div id="errorMessage" class="notification is-warning has-text-centered" [hidden]="!errorMessage">
+  <p>{{errorMessage}}</p>
+</div>
+
 <div id="loading" [hidden]="!loading"></div>
 
 <div id="details" *ngIf="details">
