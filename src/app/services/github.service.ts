@@ -10,7 +10,7 @@ export class GithubService {
   constructor(private http: HttpClient) { }
 
   getUsers(query) {
-    return this.http.get(this.BASE_URL + '/search/users?per_page=100&q=' + query);
+    return this.http.get<any>(this.BASE_URL + '/search/users?per_page=100&q=' + query);
   }
 
   getUser(url) {

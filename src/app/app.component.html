@@ -7,7 +7,7 @@
 
   <div class="card" *ngIf="!loading">
     <div class="card-image">
-      <img [src]="user.avatar_url" alt="GitHub avatar URL">
+      <img [src]="user.avatar_url + '&s=400'" alt="GitHub avatar URL">
     </div>
 
     <div class="card-content">
@@ -80,7 +80,7 @@
           <h1 class="title is-size-4">{{user.login}}</h1>
         </div>
 
-        <img class="image" src="{{user.avatar_url}}" alt="GitHub avatar URL">
+        <img class="image" src="{{user.avatar_url + '&s=400'}}" alt="GitHub avatar URL">
 
         <button class="button is-primary is-inverted" (click)="showDetails(user.url)">Details</button>
       </div>
