@@ -15,19 +15,17 @@
     </div>
 
     <div class="card-content">
-      <h1 class="title">{{user.name}}</h1>
-
-      <span *ngIf="!user.name">
-        <h1 class="title">No name given...</h1>
-      </span>
+      <h1 class="title">{{user.name}}
+        <span *ngIf="!user.name">No name given...</span>
+      </h1>
 
       <h2 class="subtitle has-text-primary">{{user.login}}</h2>
 
-      <p>{{user.bio}}</p>
-
-      <span *ngIf="!user.bio">
-        <p>The user has not written a bio.</p>
-      </span>
+      <p>{{user.bio}}
+        <span *ngIf="!user.bio">
+          The user has not written a bio.
+        </span>
+      </p>
 
       <ul>
         <li>
