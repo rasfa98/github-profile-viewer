@@ -37,7 +37,7 @@ export class AppComponent {
     this.users = [];
 
     this.github.getUsers(query, this.page).subscribe(res => {
-      this.lastPage = Math.ceil(res.total_count / 50);
+      this.lastPage = Math.ceil(res.total_count / 100);
       this.loading = false;
       this.users = res.items;
 
