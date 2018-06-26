@@ -72,6 +72,11 @@
     <button #searchBtn class="button is-primary is-rounded" (click)="search(query.value)" disabled>Search</button>
   </div>
 
+  <div id="pagination">
+    <button #prev id="prev" class="button" (click)="prevPage()" disabled>Prev</button>
+    <button #next id="next" class="button" (click)="nextPage()" disabled>Next</button>
+  </div>
+
   <div id="results" class="columns is-multiline">
 
     <div *ngFor="let user of users" class="column" class="column is-one-quarter">
