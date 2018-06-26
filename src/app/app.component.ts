@@ -11,8 +11,10 @@ export class AppComponent {
   @ViewChild('query') searchInput: any;
 
   users: string[];
-  details: boolean;
   user: any;
+  details: boolean;
+  loadingResults: boolean;
+  loadingDetails: boolean;
 
   constructor(private github: GithubService) {
     this.details = false;
@@ -27,19 +29,26 @@ export class AppComponent {
   }
 
   search(query) {
-    this.github.getUsers(query).subscribe(res => this.users = res.items);
+    this.loadingResults = true;
+    this.github.getUsers(query).subscribe(res => {
+      this.loadingResults = false;
+      this.users = res.items;
+    });
     this.searchInput.nativeElement.value = '';
     this.searchBtn.nativeElement.disabled = true;
   }
 
   showDetails(user) {
+    this.details = true;
+    this.loadingDetails = true;
     this.github.getUser(user).subscribe(res => {
-      this.details = true;
+      this.loadingDetails = false;
       this.user = res;
     });
   }
 
-  closeDetails() {
+  closeDetails(event) {
     this.details = false;
+    event.preventDefault();
   }
 }

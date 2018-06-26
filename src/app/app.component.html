@@ -1,76 +1,76 @@
-<div id="details" [hidden]="!details">
-  <a id="close" class="icon is-pulled-right has-text-primary" href="#" (click)="closeDetails()">
+<div id="loading" *ngIf="loadingResults || loadingDetails"></div>
+
+<div id="details" *ngIf="details">
+  <a id="close" class="icon is-pulled-right has-text-primary" href="#" (click)="closeDetails($event)">
     <i class="fas fa-times"></i>
   </a>
 
-  <div *ngIf="details">
-    <div class="card">
-      <div class="card-image">
-        <img [src]="user.avatar_url" alt="GitHub avatar URL">
-      </div>
+  <div class="card" *ngIf="!loadingDetails">
+    <div class="card-image">
+      <img [src]="user.avatar_url" alt="GitHub avatar URL">
+    </div>
 
-      <div class="card-content">
-        <h1 class="title">{{user.name}}</h1>
+    <div class="card-content">
+      <h1 class="title">{{user.name}}</h1>
 
-        <span *ngIf="!user.name">
-          <h1 class="title">No name given...</h1>
-        </span>
+      <span *ngIf="!user.name">
+        <h1 class="title">No name given...</h1>
+      </span>
 
-        <h2 class="subtitle">{{user.login}}</h2>
+      <h2 class="subtitle has-text-primary">{{user.login}}</h2>
 
-        <p>{{user.bio}}</p>
+      <p>{{user.bio}}</p>
 
-        <span *ngIf="!user.bio">
-          <p>The user has not written a bio.</p>
-        </span>
+      <span *ngIf="!user.bio">
+        <p>The user has not written a bio.</p>
+      </span>
 
-        <ul>
-          <li>
-            <span class="icon has-text-primary">
-              <i class="fas fa-map-marker-alt"></i>
-            </span> {{user.location}}
+      <ul>
+        <li>
+          <span class="icon has-text-primary">
+            <i class="fas fa-map-marker-alt"></i>
+          </span> {{user.location}}
 
-            <span *ngIf="!user.location">No location</span>
-          </li>
+          <span *ngIf="!user.location">No location</span>
+        </li>
 
-          <li>
-            <span class="icon has-text-primary">
-              <i class="fas fa-book"></i>
-            </span> {{user.public_repos}}</li>
+        <li>
+          <span class="icon has-text-primary">
+            <i class="fas fa-book"></i>
+          </span> {{user.public_repos}}</li>
 
-          <li>
-            <span class="icon has-text-primary">
-              <i class="fas fa-user"></i>
-            </span> {{user.followers}}</li>
+        <li>
+          <span class="icon has-text-primary">
+            <i class="fas fa-user"></i>
+          </span> {{user.followers}}</li>
 
-          <li>
-            <span class="icon has-text-primary">
-              <i class="fas fa-building"></i>
-            </span> {{user.company}}
+        <li>
+          <span class="icon has-text-primary">
+            <i class="fas fa-building"></i>
+          </span> {{user.company}}
 
-            <span *ngIf="!user.company">No company</span>
-          </li>
+          <span *ngIf="!user.company">No company</span>
+        </li>
 
-          <li>
-            <span class="icon has-text-primary">
-              <i class="far fa-calendar-alt"></i>
-            </span> {{user.created_at | slice:0:10}}</li>
-        </ul>
-      </div>
+        <li>
+          <span class="icon has-text-primary">
+            <i class="far fa-calendar-alt"></i>
+          </span> {{user.created_at | slice:0:10}}</li>
+      </ul>
     </div>
   </div>
 </div>
 
 <div class="container has-text-centered">
   <div id="search">
-    <h1 class="title has-text-primary ">Search for GitHub user</h1>
+    <h1 class="title has-text-primary ">GitHub Profile Viewer</h1>
 
     <input type="text" placeholder="Enter username..." class="input is-primary is-rounded" #query (input)="checkInput(query.value)">
 
     <button #searchBtn class="button is-primary is-outlined is-rounded" (click)="search(query.value)" disabled>Search</button>
   </div>
 
-  <div id="results" class="columns is-multiline">
+  <div id="results" class="columns is-multiline" *ngIf="!loading">
 
     <div *ngFor="let user of users" class="column" class="column is-one-quarter">
 
