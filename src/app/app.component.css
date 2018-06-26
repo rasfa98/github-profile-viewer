@@ -6,13 +6,21 @@ body, html {
     padding-top: 50px;
 }
 
-button {
+#search button {
     margin-top: 20px;
     width: 100%;
 }
 
-.columns {
+#results {
     margin-top: 50px;
+}
+
+#results img {
+    margin: 0 auto;
+}
+
+#results .card button {
+    width: 100%;
 }
 
 #details {
@@ -35,4 +43,9 @@ button {
     transform: translateY(-50%);
     margin: 0 auto;
     margin-left: -200px;
+}
+
+#details a {
+    margin: 40px;
+    font-size: 50px;
 }

@@ -13,7 +13,7 @@ export class GithubService {
     return this.http.get(this.BASE_URL + '/search/users?per_page=100&q=' + query);
   }
 
-  getUser(username) {
-    return this.http.get(this.BASE_URL + '/users/' + username);
+  getUser(url) {
+    return this.http.get(url);
   }
 }

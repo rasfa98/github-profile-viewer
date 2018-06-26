@@ -25,4 +25,8 @@ export class AppComponent {
       this.user = res;
     });
   }
+
+  closeDetails() {
+    this.details = false;
+  }
 }
