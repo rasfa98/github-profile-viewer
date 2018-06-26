@@ -29,5 +29,10 @@ button {
 
 #details .card {
     width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
     margin: 0 auto;
+    margin-left: -200px;
 }
