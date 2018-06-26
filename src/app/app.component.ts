@@ -13,36 +13,34 @@ export class AppComponent {
   users: string[];
   user: any;
   details: boolean;
-  loadingResults: boolean;
-  loadingDetails: boolean;
+  loading: boolean;
 
   constructor(private github: GithubService) {
     this.details = false;
   }
 
   checkInput(query) {
-    if (query.trim() !== '') {
-      this.searchBtn.nativeElement.disabled = false;
-    } else {
-      this.searchBtn.nativeElement.disabled = true;
-    }
+    this.searchBtn.nativeElement.disabled = query.trim() === '';
   }
 
   search(query) {
-    this.loadingResults = true;
+    this.loading = true;
+
     this.github.getUsers(query).subscribe(res => {
-      this.loadingResults = false;
+      this.loading = false;
       this.users = res.items;
     });
+
     this.searchInput.nativeElement.value = '';
     this.searchBtn.nativeElement.disabled = true;
   }
 
   showDetails(user) {
     this.details = true;
-    this.loadingDetails = true;
+    this.loading = true;
+
     this.github.getUser(user).subscribe(res => {
-      this.loadingDetails = false;
+      this.loading = false;
       this.user = res;
     });
   }

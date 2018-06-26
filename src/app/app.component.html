@@ -1,11 +1,11 @@
-<div id="loading" *ngIf="loadingResults || loadingDetails"></div>
+<div id="loading" [hidden]="!loading"></div>
 
 <div id="details" *ngIf="details">
   <a id="close" class="icon is-pulled-right has-text-primary" href="#" (click)="closeDetails($event)">
     <i class="fas fa-times"></i>
   </a>
 
-  <div class="card" *ngIf="!loadingDetails">
+  <div class="card" *ngIf="!loading">
     <div class="card-image">
       <img [src]="user.avatar_url" alt="GitHub avatar URL">
     </div>
@@ -67,16 +67,18 @@
 
     <input type="text" placeholder="Enter username..." class="input is-primary is-rounded" #query (input)="checkInput(query.value)">
 
-    <button #searchBtn class="button is-primary is-outlined is-rounded" (click)="search(query.value)" disabled>Search</button>
+    <button #searchBtn class="button is-primary is-rounded" (click)="search(query.value)" disabled>Search</button>
   </div>
 
-  <div id="results" class="columns is-multiline" *ngIf="!loading">
+  <div id="results" class="columns is-multiline">
 
     <div *ngFor="let user of users" class="column" class="column is-one-quarter">
 
       <div class="card">
 
-        <div class="card-header">{{user.login}}</div>
+        <div class="card-header">
+          <h1 class="title is-size-4">{{user.login}}</h1>
+        </div>
 
         <img class="image" src="{{user.avatar_url}}" alt="GitHub avatar URL">
 

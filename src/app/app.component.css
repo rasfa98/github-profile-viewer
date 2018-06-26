@@ -3,8 +3,36 @@ html {
   height: 100vh;
 }
 
+img {
+  margin: 0 auto;
+  display: block;
+}
+
 .container {
   padding-top: 50px;
+}
+
+#loading {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #00d1b2;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 300px;
+  margin-left: -60px;
+  z-index: 20;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
 }
 
 #search button {
@@ -16,13 +44,24 @@ html {
   margin-top: 25px;
 }
 
-img {
-  margin: 0 auto;
-  display: block;
-}
-
 #results .card button {
   width: 100%;
+  border-radius: 0;
+}
+
+#results .title {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+
+#results .card {
+  transition: transform 0.2s;
+  margin: 10px;
+}
+
+#results .card:hover {
+  transform: scale(1.1)
 }
 
 #details {
@@ -51,34 +90,15 @@ img {
   font-size: 50px;
 }
 
+#details .title {
+  margin-top: 0;
+}
+
 #details .subtitle {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 #details p {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-#loading {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #00d1b2;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-  position: absolute;
-  left: 50%;
-  top: 300px;
-  margin-left: -60px;
-  z-index: 20;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg)
-  }
-  100% {
-    transform: rotate(360deg)
-  }
 }
