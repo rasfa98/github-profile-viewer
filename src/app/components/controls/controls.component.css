@@ -1,0 +1,9 @@
+:host {
+  padding-top: 20px;
+  display: block;
+}
+
+:host .field {
+  margin-bottom: 20px;
+  display: inline-flex;
+}

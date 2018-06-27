@@ -1,0 +1,16 @@
+<div class="columns is-multiline">
+
+  <div *ngFor="let user of users" class="column" class="column is-one-fifth">
+
+    <div class="card">
+
+      <div class="card-header">
+        <h1 class="title is-size-4">{{user.login}}</h1>
+      </div>
+
+      <img class="image" src="{{user.avatar_url + '&s=400'}}" alt="GitHub avatar URL">
+
+      <button class="button is-primary is-inverted" (click)="showDetails(user.login)">Details</button>
+    </div>
+  </div>
+</div>

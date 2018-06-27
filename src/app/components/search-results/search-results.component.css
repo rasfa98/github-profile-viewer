@@ -1,0 +1,19 @@
+:host .card button {
+  width: 100%;
+  border-radius: 0;
+}
+
+:host .title {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+
+:host .card {
+  transition: transform 0.2s;
+  margin: 10px;
+}
+
+:host .card:hover {
+  transform: scale(1.1)
+}
