@@ -10,7 +10,7 @@ export class DetailedUserComponent implements OnInit {
   private user;
   private details = false;
 
-  constructor(private github: GithubService) {}
+  constructor(private github: GithubService) { }
 
   ngOnInit() {
     this.github.user.subscribe(user => {
@@ -19,12 +19,9 @@ export class DetailedUserComponent implements OnInit {
         this.details = true;
       }
     });
-
-    this.github.error.subscribe(erros => this.details = false);
   }
 
   closeDetails(event) {
     this.details = false;
   }
-
 }

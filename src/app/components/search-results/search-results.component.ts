@@ -12,16 +12,10 @@ export class SearchResultsComponent implements OnInit {
   constructor(private github: GithubService) { }
 
   ngOnInit() {
-    this.github.users.subscribe(users => {
-      this.users = users;
-      this.github.updateLoading(false);
-    });
+    this.github.users.subscribe(users => this.users = users);
   }
 
   showDetails(username) {
-    this.github.getUser(username).subscribe(res => {
-      this.github.updateUser(res);
-    }, err => this.github.updateError(err));
+    this.github.getUser(username).subscribe(res => this.github.updateUser(res));
   }
-
 }

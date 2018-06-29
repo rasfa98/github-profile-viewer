@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GithubService } from './services/github.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,5 @@ import { GithubService } from './services/github.service';
 })
 export class AppComponent {
 
-  constructor(private github: GithubService) { }
+  constructor() { }
 }

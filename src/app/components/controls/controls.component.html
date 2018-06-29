@@ -2,11 +2,11 @@
 
 <div class="field has-addons">
   <div class="control">
-    <input class="input is-primary" type="text" placeholder="Enter GitHub username..." #query>
+    <input class="input is-primary" type="text" (input)="checkInput(query.value)" placeholder="Enter GitHub username..." #query>
   </div>
   <div class="control">
-    <a class="button is-primary" (click)="search(query.value)">
+    <button class="button is-primary" (click)="search(query.value)" disabled #searchBtn>
       Search
-    </a>
+    </button>
   </div>
 </div>

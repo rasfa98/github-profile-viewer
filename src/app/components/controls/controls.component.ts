@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GithubService } from '../../services/github.service';
 
 @Component({
@@ -7,20 +7,27 @@ import { GithubService } from '../../services/github.service';
   styleUrls: ['./controls.component.css']
 })
 export class ControlsComponent implements OnInit {
+  @ViewChild('query') inputField: any;
+  @ViewChild('searchBtn') searchBtn: any;
 
   constructor(private github: GithubService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  checkInput(input) {
+    if (input.trim() === '') {
+      this.searchBtn.nativeElement.disabled = true;
+    } else {
+      this.searchBtn.nativeElement.disabled = false;
+    }
   }
 
   search(query) {
-    this.github.updateLoading(true);
-
-    this.github.updateUsers([]);
-
     this.github.getUsers(query).subscribe(res => {
       this.github.updateUsers(res.items);
-    }, err => this.github.updateError(err));
+      this.inputField.nativeElement.value = '';
+      this.searchBtn.nativeElement.disabled = true;
+    });
   }
 
 }
