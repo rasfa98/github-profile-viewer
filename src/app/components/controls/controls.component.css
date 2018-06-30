@@ -1,6 +1,8 @@
 :host {
   padding-top: 20px;
   display: block;
+  z-index: 20;
+  position: relative;
 }
 
 :host .field {

@@ -17,8 +17,11 @@ export class SearchResultsComponent implements OnInit {
   }
 
   showDetails(username) {
+    this.misc.updateLoading(true);
+
     this.github.getUser(username).subscribe(res => {
       this.github.updateUser(res);
+      this.misc.updateLoading(false);
     }, error => this.misc.updateError(true));
   }
 }
