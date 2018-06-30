@@ -6,28 +6,28 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class GithubService {
-  private _url = 'https://api.github.com';
-  private _users = new BehaviorSubject(null);
-  private _user = new BehaviorSubject(null);
+  private Url = 'https://api.github.com';
+  private Users = new BehaviorSubject(null);
+  private User = new BehaviorSubject(null);
 
-  public users = this._users.asObservable();
-  public user = this._user.asObservable();
+  public users = this.Users.asObservable();
+  public user = this.User.asObservable();
 
   constructor(private http: HttpClient) { }
 
   getUsers(query) {
-    return this.http.get(this._url + '/search/users?per_page=50&q=' + query);
+    return this.http.get(this.Url + '/search/users?per_page=50&q=' + query);
   }
 
   getUser(username) {
-    return this.http.get(this._url + '/users/' + username);
+    return this.http.get(this.Url + '/users/' + username);
   }
 
   updateUsers(users) {
-    this._users.next(users);
+    this.Users.next(users);
   }
 
   updateUser(user) {
-    this._user.next(user);
+    this.User.next(user);
   }
 }
