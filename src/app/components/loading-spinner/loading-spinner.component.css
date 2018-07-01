@@ -7,7 +7,7 @@
   right: 0;
   bottom: 0;
   background-color: white;
-  z-index: 30;
+  z-index: 20;
 }
 
 .spinner {
@@ -19,7 +19,7 @@
   animation: spin 2s linear infinite;
   display: block;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 180px;
 }
 
 @keyframes spin {

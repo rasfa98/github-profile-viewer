@@ -15,5 +15,4 @@ export class LoadingSpinnerComponent implements OnInit {
     this.misc.loading.subscribe(loading => this.showSpinner = loading);
     this.misc.error.subscribe(error => this.showSpinner = false);
   }
-
 }

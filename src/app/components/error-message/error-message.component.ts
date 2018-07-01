@@ -22,5 +22,4 @@ export class ErrorMessageComponent implements OnInit {
       }
     });
   }
-
 }

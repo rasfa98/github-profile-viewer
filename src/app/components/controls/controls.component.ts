@@ -35,5 +35,4 @@ export class ControlsComponent implements OnInit {
       this.searchBtn.nativeElement.disabled = true;
     }, error => this.misc.updateError(true));
   }
-
 }

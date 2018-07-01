@@ -7,11 +7,10 @@ import { ControlsComponent } from './components/controls/controls.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { DetailedUserComponent } from './components/detailed-user/detailed-user.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 import { GithubService } from './services/github.service';
 import { MiscService } from './services/misc.service';
-import { ErrorMessageComponent } from './components/error-message/error-message.component';
-
 
 @NgModule({
   declarations: [
