@@ -16,11 +16,11 @@ export class GithubService {
   constructor(private http: HttpClient) { }
 
   getUsers(query) {
-    return this.http.get(this.Url + '/search/users?per_page=50&q=' + query);
+    return this.http.get<any>(this.Url + '/search/users?per_page=50&q=' + query);
   }
 
   getUser(username) {
-    return this.http.get(this.Url + '/users/' + username);
+    return this.http.get<any>(this.Url + '/users/' + username);
   }
 
   updateUsers(users) {
