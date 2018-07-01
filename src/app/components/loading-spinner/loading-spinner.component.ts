@@ -7,7 +7,7 @@ import { MiscService } from '../../services/misc.service';
   styleUrls: ['./loading-spinner.component.css']
 })
 export class LoadingSpinnerComponent implements OnInit {
-  showSpinner = true;
+  public showSpinner = true;
 
   constructor(private misc: MiscService) { }
 

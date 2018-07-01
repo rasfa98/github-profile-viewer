@@ -7,7 +7,7 @@ import { MiscService } from '../../services/misc.service';
   styleUrls: ['./error-message.component.css']
 })
 export class ErrorMessageComponent implements OnInit {
-  showError = false;
+  public showError = false;
 
   constructor(private misc: MiscService) { }
 

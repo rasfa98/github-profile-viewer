@@ -7,8 +7,8 @@ import { GithubService } from '../../services/github.service';
   styleUrls: ['./detailed-user.component.css']
 })
 export class DetailedUserComponent implements OnInit {
-  private user;
-  private details = false;
+  public user;
+  public details = false;
 
   constructor(private github: GithubService) { }
 

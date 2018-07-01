@@ -8,7 +8,7 @@ import { MiscService } from '../../services/misc.service';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
-  private users;
+  public users;
 
   constructor(private github: GithubService, private misc: MiscService) { }
 
