@@ -1,4 +1,4 @@
-# Github profile viewer
+# GitHub profile viewer
 
 Search for GitHub users and view their profile details!
 
